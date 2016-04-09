@@ -6,9 +6,11 @@ gem 'puma'
 gem 'rack-cors'
 gem 'active_model_serializers'
 gem 'responders'
+gem 'gcm'
 
 group :development, :test do
   gem 'byebug'
+  gem 'dotenv-rails'
 end
 
 group :development do
