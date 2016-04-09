@@ -21,7 +21,7 @@ class NotificationService
   end
 
   def serialized_child
-    UsersSerializer.new(child).serializable_hash
+    UserSerializer.new(child).serializable_hash
   end
 
   def child

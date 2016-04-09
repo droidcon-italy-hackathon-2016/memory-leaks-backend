@@ -11,4 +11,13 @@ class RelativesControllerTest < ActionController::TestCase
       post :create, params: { relative: { elder_id: @elder.id, child_id: @child.id } }, format: :json
     end
   end
+
+  test '#index' do
+    Relative.create(child_id: @child.id, elder_id: @elder.id)
+
+    get :index, params: { user_id: @child.id }, format: :json
+
+    expected_relatives = {relatives: [UserSerializer.new(@elder).serializable_hash]}.to_json
+    assert @response.body == expected_relatives
+  end
 end
