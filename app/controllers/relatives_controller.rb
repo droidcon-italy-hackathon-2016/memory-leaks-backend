@@ -1,6 +1,6 @@
 class RelativesController < ApplicationController
   def create
-    respond_with Relative.create(relative_params), location: nil
+    respond_with Relative.create(relative_params)
   end
 
   def relative_params

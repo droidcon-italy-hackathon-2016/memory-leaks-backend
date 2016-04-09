@@ -4,6 +4,8 @@ class CreateUsers < ActiveRecord::Migration[5.0]
 
     create_table :users, id: :uuid do |t|
       t.string :name
+      t.string :device_token
+
       t.timestamps
     end
   end
