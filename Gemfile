@@ -5,6 +5,7 @@ gem 'pg', '~> 0.18'
 gem 'puma'
 gem 'rack-cors'
 gem 'active_model_serializers'
+gem 'responders'
 
 group :development, :test do
   gem 'byebug'
