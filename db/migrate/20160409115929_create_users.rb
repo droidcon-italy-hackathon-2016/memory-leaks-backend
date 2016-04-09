@@ -3,8 +3,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
     enable_extension 'uuid-ossp'
 
     create_table :users, id: :uuid do |t|
-      t.string :first_name
-      t.string :last_name
+      t.string :name
       t.timestamps
     end
   end

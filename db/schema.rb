@@ -17,19 +17,18 @@ ActiveRecord::Schema.define(version: 20160409122749) do
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
 
-  create_table "user_relatives", force: :cascade do |t|
-    t.uuid     "user_id"
-    t.uuid     "relative_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+  create_table "relatives", force: :cascade do |t|
+    t.uuid     "elder_id"
+    t.uuid     "child_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_index "user_relatives", ["relative_id"], name: "index_user_relatives_on_relative_id", using: :btree
-  add_index "user_relatives", ["user_id"], name: "index_user_relatives_on_user_id", using: :btree
+  add_index "relatives", ["child_id"], name: "index_relatives_on_child_id", using: :btree
+  add_index "relatives", ["elder_id"], name: "index_relatives_on_elder_id", using: :btree
 
   create_table "users", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

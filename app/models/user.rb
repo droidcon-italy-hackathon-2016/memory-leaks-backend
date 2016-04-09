@@ -1,4 +1,4 @@
 class User < ActiveRecord::Base
-  has_many :relatives, through: :user_relatives, class_name: 'User'
-  has_many :user_relatives
+  has_many :elders, foreign_key: 'child_id', class_name: 'Relative'
+  has_many :childs, foreign_key: 'elder_id', class_name: 'Relative'
 end
