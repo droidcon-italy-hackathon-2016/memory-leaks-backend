@@ -24,16 +24,13 @@ class UsersController < ApplicationController
 
   def elder_photos
     [
-      "http://caiapark.org.uk/wp-content/uploads/2014/01/olderlady.jpg",
-      "http://i.huffpost.com/gen/1743744/images/o-OLDER-PERSON-UNHAPPY-facebook.jpg",
-      "http://cattongrovebiglocal.co.uk/wp-content/uploads/2015/05/older-lady.jpg"
+      "http://www.versusbattle.com/wp-content/uploads/2013/03/darth-vader.jpg",
     ]
   end
 
   def young_photos
     [
-      "http://blog.yonkausa.com/wp-content/uploads/2015/06/habits-happy-people.jpg",
-      "http://www.careershifters.org/sites/default/files/styles/article_node/public/field/image/laugh_10_0.jpg?itok=s2vmB2r_"
+      "http://cdn.fansided.com/wp-content/blogs.dir/319/files/2015/04/Luke-NOOOOOO.gif"
     ]
   end
 end

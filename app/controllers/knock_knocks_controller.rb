@@ -2,7 +2,7 @@ class KnockKnocksController < ApplicationController
   def create
     if relative?
       NotificationService.new(knock_knock_params).send
-      render status: :ok
+      render json: {}
     else
       render status: :unauthorized
     end

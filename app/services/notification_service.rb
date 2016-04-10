@@ -2,6 +2,7 @@ require 'gcm'
 
 class NotificationService
   def initialize(params)
+    @params = params
     @child_id = params[:child_id]
     @elder_id = params[:elder_id]
   end
@@ -21,7 +22,7 @@ class NotificationService
   end
 
   def serialized_child
-    UserSerializer.new(child).serializable_hash
+    UserSerializer.new(child).serializable_hash.merge(relation: relative.relation)
   end
 
   def child
@@ -30,5 +31,9 @@ class NotificationService
 
   def elder
     User.find(@elder_id)
+  end
+
+  def relative
+    Relative.find_by(@params)
   end
 end

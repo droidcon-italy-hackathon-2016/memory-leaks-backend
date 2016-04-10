@@ -5,7 +5,7 @@ class RelativesController < ApplicationController
   end
 
   def create
-    respond_with Relative.create(relative_params.merge(elder_id: elder.id))
+    respond_with Relative.create(elder_id: elder.id, child_id: params[:child_id], relation: params[:relation])
   end
 
   private
