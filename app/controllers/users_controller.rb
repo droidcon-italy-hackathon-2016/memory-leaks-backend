@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def create
-    user = User.create(user_params.merge(photo_url: photo_url))
+    user = User.create(user_params.merge(photo_url: photo_url, photo_urls: photo_urls))
     respond_with user
   end
 
@@ -30,7 +30,9 @@ class UsersController < ApplicationController
 
   def young_photos
     [
-      "http://cdn.fansided.com/wp-content/blogs.dir/319/files/2015/04/Luke-NOOOOOO.gif"
+      "http://cdn.24.co.za/files/Cms/General/d/719/344d7a46196a492095bafdd67a55511b.jpg",
+      "http://thumbs.dreamstime.com/thumblarge_472/4723613.jpg",
+      "http://thumbs.dreamstime.com/x/obbligazioni-del-grandpa-con-teenager-9910145.jpg"
     ]
   end
 end
