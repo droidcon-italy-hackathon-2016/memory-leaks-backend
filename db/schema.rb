@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20160409122749) do
   create_table "relatives", force: :cascade do |t|
     t.uuid     "elder_id"
     t.uuid     "child_id"
+    t.string   "relation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

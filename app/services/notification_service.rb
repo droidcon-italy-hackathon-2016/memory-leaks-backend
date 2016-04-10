@@ -1,9 +1,9 @@
 require 'gcm'
 
 class NotificationService
-  def initialize(child_id, elder_id)
-    @child_id = child_id
-    @elder_id = elder_id
+  def initialize(params)
+    @child_id = params[:child_id]
+    @elder_id = params[:elder_id]
   end
 
   def send

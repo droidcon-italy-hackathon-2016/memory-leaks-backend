@@ -19,6 +19,6 @@ class RelativesController < ApplicationController
   end
 
   def relative_params
-    params.require(:relative).permit(:elder_id, :child_id)
+    params.require(:relative).permit(:elder_id, :child_id, :relation)
   end
 end
