@@ -11,7 +11,7 @@ class KnockKnocksController < ApplicationController
   private
 
   def knock_knock_params
-    params.require(:knock).permit(:elder_id, :child_id)
+    params.permit(:elder_id, :child_id)
   end
 
   def relative?

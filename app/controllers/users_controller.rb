@@ -6,6 +6,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :device_token)
+    params.permit(:name, :device_token)
   end
 end

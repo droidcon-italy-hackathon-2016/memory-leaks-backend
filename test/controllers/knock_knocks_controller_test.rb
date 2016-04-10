@@ -9,12 +9,12 @@ class KnockKnocksControllerTest < ActionController::TestCase
   test '#create when authorized' do
     Relative.create(child_id: @child.id, elder_id: @elder.id)
 
-    post :create, params: { knock: { elder_id: @elder.id, child_id: @child.id } }, format: :json
+    post :create, params: { elder_id: @elder.id, child_id: @child.id }, format: :json
     assert_response :ok
   end
 
   test '#create when unauthorized' do
-    post :create, params: { knock: { elder_id: @elder.id, child_id: @child.id } }, format: :json
+    post :create, params: { elder_id: @elder.id, child_id: @child.id }, format: :json
     assert_response :unauthorized
   end
 end
