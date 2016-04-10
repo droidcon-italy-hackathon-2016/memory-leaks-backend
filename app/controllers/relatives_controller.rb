@@ -5,10 +5,14 @@ class RelativesController < ApplicationController
   end
 
   def create
-    respond_with Relative.create(relative_params)
+    respond_with Relative.create(relative_params.merge(elder_id: elder.id))
   end
 
   private
+
+  def elder
+    User.all.select { |user| user.id.slice(0, 4) == params[:elder_id] }[0]
+  end
 
   def serialized_relatives
     relatives.map(&:elder).map { |user| UserSerializer.new(user).serializable_hash }
