@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 
   def elder_photos
     [
-      "http://www.versusbattle.com/wp-content/uploads/2013/03/darth-vader.jpg",
+      "https://d1hekt5vpuuw9b.cloudfront.net/assets/article/4c76fc5e018baa83a0d458a723c7c844_grandpa-rules-580x326_featuredImage.jpg"
     ]
   end
 
